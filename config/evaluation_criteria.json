@@ -1,0 +1,28 @@
+{
+    "criteria": [
+        {
+            "name": "correctness",
+            "description": "Does the AI answer contain factually correct information according to the source of truth?"
+        },
+        {
+            "name": "relevance",
+            "description": "Does the AI answer directly address the user's actual question and focus on information that is useful for answering that question? Information that is unrelated to the user's request should reduce the score."
+        },
+        {
+            "name": "completeness",
+            "description": "Does the AI answer include all important information needed to properly answer the user's question?"
+        },
+        {
+            "name": "groundedness",
+            "description": "Are the claims made by the AI answer supported by the provided source of truth?"
+        },
+        {
+            "name": "conciseness",
+            "description": "Does the AI answer contain only information that is useful for answering the user's question? Penalize unnecessary, redundant, tangential, or unrelated information even if the answer is short. A concise answer should provide the necessary information without adding avoidable content."
+        }
+    ],
+    "scale": {
+        "min": 1,
+        "max": 5
+    }
+}

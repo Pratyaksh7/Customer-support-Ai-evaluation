@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cal_001",
+    "question": "I bought a physical product 10 days ago. It is unused. Can I get a refund?",
+    "ai_answer": "Yes, you can get a refund. Since your physical product is unused and was purchased within the allowed timeframe, you are eligible. Please notethat refunds are available within 60 days.",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_evaluation": {
+      "correctness": 2,
+      "relevance": 5,
+      "completeness": 5,
+      "groundedness": 2,
+      "conciseness": 3
+    }
+  }
+]

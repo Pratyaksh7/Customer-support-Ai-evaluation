@@ -1,0 +1,10 @@
+[
+  {
+    "type": "max_length",
+    "maximum": 500
+  },
+  {
+    "type": "min_length",
+    "minimum": 10
+  }
+]

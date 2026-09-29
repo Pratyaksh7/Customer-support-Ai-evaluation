@@ -1,0 +1,71 @@
+[
+  {
+    "id": "case_001",
+    "question": "I bought a physical product 10 days ago. It is unused. Can I get a refund?",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_facts": [
+      "The purchase must be within 30 days.",
+      "The product must be unused.",
+      "The customer is eligible for a refund."
+    ]
+  },
+  {
+    "id": "case_002",
+    "question": "I bought a physical product 45 days ago. Can I get a refund?",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_facts": [
+      "Refund requests must be made within 30 days.",
+      "The customer is not eligible for a refund."
+    ]
+  },
+  {
+    "id": "case_003",
+    "question": "I bought a digital product 5 days ago. Can I get a refund?",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_facts": [
+      "Digital products are non-refundable."
+    ]
+  },
+  {
+    "id": "case_004",
+    "question": "I bought a physical product 15 days ago, but I have already used it. Can I get a refund?",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_facts": [
+      "The product must be unused.",
+      "The customer is not eligible for a refund."
+    ]
+  },
+  {
+    "id": "case_005",
+    "question": "I bought an unused physical product 20 days ago. How long will my refund take?",
+    "source_of_truth": [
+      "Customers can request a refund within 30 days of purchase.",
+      "Products must be unused.",
+      "Digital products are non-refundable.",
+      "Refunds are processed within 5 business days."
+    ],
+    "expected_facts": [
+      "Refunds are processed within 5 business days."
+    ]
+  }
+]
