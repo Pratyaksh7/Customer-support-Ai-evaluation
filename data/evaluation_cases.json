@@ -12,6 +12,16 @@
       "The purchase must be within 30 days.",
       "The product must be unused.",
       "The customer is eligible for a refund."
+    ],
+    "deterministic_rules": [
+      {
+        "type": "max_length",
+        "maximum": 500
+      },
+      {
+        "type": "min_length",
+        "minimum": 10
+      }
     ]
   },
   {
@@ -26,6 +36,16 @@
     "expected_facts": [
       "Refund requests must be made within 30 days.",
       "The customer is not eligible for a refund."
+    ],
+    "deterministic_rules": [
+      {
+        "type": "max_length",
+        "maximum": 500
+      },
+      {
+        "type": "min_length",
+        "minimum": 10
+      }
     ]
   },
   {
@@ -39,6 +59,16 @@
     ],
     "expected_facts": [
       "Digital products are non-refundable."
+    ],
+    "deterministic_rules": [
+      {
+        "type": "max_length",
+        "maximum": 500
+      },
+      {
+        "type": "min_length",
+        "minimum": 10
+      }
     ]
   },
   {
@@ -53,6 +83,16 @@
     "expected_facts": [
       "The product must be unused.",
       "The customer is not eligible for a refund."
+    ],
+    "deterministic_rules": [
+      {
+        "type": "max_length",
+        "maximum": 500
+      },
+      {
+        "type": "min_length",
+        "minimum": 10
+      }
     ]
   },
   {
@@ -66,6 +106,16 @@
     ],
     "expected_facts": [
       "Refunds are processed within 5 business days."
+    ],
+    "deterministic_rules": [
+      {
+        "type": "max_length",
+        "maximum": 500
+      },
+      {
+        "type": "min_length",
+        "minimum": 10
+      }
     ]
   }
 ]
