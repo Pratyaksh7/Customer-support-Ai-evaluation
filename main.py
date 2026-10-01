@@ -235,6 +235,9 @@ def main():
         run_id=create_run_id(),
         timestamp=datetime.now().isoformat(),
 
+        agent_version="refund-agent-v1",
+        dataset_version="refund-dataset-v1",
+
         cases_evaluated=len(cases),
 
         results=serialized_results,

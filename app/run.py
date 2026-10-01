@@ -9,6 +9,9 @@ class EvaluationRun:
     run_id: str
     timestamp: str
 
+    agent_version: str
+    dataset_version: str
+
     cases_evaluated: int
 
     results: list[dict[str, Any]]
