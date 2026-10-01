@@ -64,11 +64,19 @@ class EvaluationRunner:
             results=results,
         )
 
-    def summarize(
-        self,
-        results,
-    ):
-        return self.aggregator.aggregate(results)
+    def summarize(self, case_evaluations: list[CaseEvaluation]):
+
+        evaluation_results = []
+
+        for case_evaluation in case_evaluations:
+
+            evaluation_results.extend(
+                case_evaluation.results
+            )
+
+        return self.aggregator.aggregate(
+            evaluation_results
+        )
 
     def check_gate(
         self,

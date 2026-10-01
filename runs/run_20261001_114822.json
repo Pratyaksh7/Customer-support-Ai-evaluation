@@ -1,0 +1,462 @@
+{
+  "run_id": "run_20261001_114822",
+  "timestamp": "2026-10-01T11:48:22.075235",
+  "cases_evaluated": 5,
+  "results": [
+    {
+      "case_id": "case_001",
+      "question": "I bought a physical product 10 days ago. It is unused. Can I get a refund?",
+      "answer": "Yes, you can get a refund since your product is unused and was purchased within the allowed timeframe. Please note that refunds are available within 60 days.",
+      "results": [
+        {
+          "evaluator": "deterministic",
+          "criterion": "max_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer is within the maximum length.",
+          "metadata": {
+            "actual_length": 157,
+            "maximum": 500
+          }
+        },
+        {
+          "evaluator": "deterministic",
+          "criterion": "min_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer meets the minimum length.",
+          "metadata": {
+            "actual_length": 157,
+            "minimum": 10
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "correctness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI incorrectly states that refunds are available within 60 days, whereas the source of truth specifies 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI directly answers the user's question regarding their eligibility for a refund.",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "completeness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI addresses all necessary components: the outcome (Yes) and the reasons why (unused and within the timeframe).",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "groundedness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The claim that refunds are available within 60 days is not supported by the source of truth, which states 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "conciseness",
+          "score": 0.75,
+          "passed": true,
+          "reason": "The answer is brief, although it includes a factually incorrect detail that was not requested by the user.",
+          "metadata": {
+            "raw_score": 4
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "question": "I bought a physical product 45 days ago. Can I get a refund?",
+      "answer": "I'm sorry, but you cannot get a refund because customers can only request a refund within 30 days of purchase. However, please note that refunds are available within 60 days.",
+      "results": [
+        {
+          "evaluator": "deterministic",
+          "criterion": "max_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer is within the maximum length.",
+          "metadata": {
+            "actual_length": 174,
+            "maximum": 500
+          }
+        },
+        {
+          "evaluator": "deterministic",
+          "criterion": "min_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer meets the minimum length.",
+          "metadata": {
+            "actual_length": 174,
+            "minimum": 10
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "correctness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI provides contradictory information. It first correctly states the 30-day limit, but then incorrectly claims refunds are available within 60 days, which contradicts both the source of truth and its own previous sentence.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "relevance",
+          "score": 0.5,
+          "passed": false,
+          "reason": "The AI addresses the user's question, but includes a completely irrelevant and incorrect statement about a 60-day window.",
+          "metadata": {
+            "raw_score": 3
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "completeness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI correctly identifies that the user is not eligible and cites the 30-day requirement.",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "groundedness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The claim that 'refunds are available within 60 days' is not supported by the source of truth; the source explicitly states 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "conciseness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The answer contains redundant and contradictory information that is not useful for answering the user's question.",
+          "metadata": {
+            "raw_score": 2
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "case_003",
+      "question": "I bought a digital product 5 days ago. Can I get a refund?",
+      "answer": "I'm sorry, but digital products are non-refundable. Please note that refunds are available within 60 days.",
+      "results": [
+        {
+          "evaluator": "deterministic",
+          "criterion": "max_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer is within the maximum length.",
+          "metadata": {
+            "actual_length": 106,
+            "maximum": 500
+          }
+        },
+        {
+          "evaluator": "deterministic",
+          "criterion": "min_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer meets the minimum length.",
+          "metadata": {
+            "actual_length": 106,
+            "minimum": 10
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "correctness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI incorrectly states that refunds are available within 60 days, whereas the source of truth states 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "relevance",
+          "score": 0.5,
+          "passed": false,
+          "reason": "The AI answers the primary question correctly, but includes irrelevant information about the refund window which does not apply to the user's digital product.",
+          "metadata": {
+            "raw_score": 3
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "completeness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI successfully provides the essential information required to answer the user's question based on the expected facts.",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "groundedness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The claim that refunds are available within 60 days is not supported by the source of truth (which says 30 days) and is therefore an hallucination.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "conciseness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI included an unnecessary and incorrect statement about the refund timeframe that was not requested and does not apply to non-refundable digital products.",
+          "metadata": {
+            "raw_score": 2
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "case_004",
+      "question": "I bought a physical product 15 days ago, but I have already used it. Can I get a refund?",
+      "answer": "I'm sorry, but you cannot get a refund because products must be unused. Please note that refunds are available within 60 days.",
+      "results": [
+        {
+          "evaluator": "deterministic",
+          "criterion": "max_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer is within the maximum length.",
+          "metadata": {
+            "actual_length": 126,
+            "maximum": 500
+          }
+        },
+        {
+          "evaluator": "deterministic",
+          "criterion": "min_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer meets the minimum length.",
+          "metadata": {
+            "actual_length": 126,
+            "minimum": 10
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "correctness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI incorrectly states that refunds are available within 60 days, whereas the source of truth explicitly states 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "relevance",
+          "score": 0.75,
+          "passed": true,
+          "reason": "The AI directly answers the user's question regarding their eligibility for a refund, although it adds an irrelevant and incorrect time frame.",
+          "metadata": {
+            "raw_score": 4
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "completeness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI correctly identifies that the user is not eligible for a refund and provides the correct reason (products must be unused).",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "groundedness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The claim that refunds are available within 60 days is not supported by the source of truth and contradicts the provided information (30 days).",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "conciseness",
+          "score": 0.5,
+          "passed": false,
+          "reason": "The AI includes unnecessary information about the refund window which was not requested and is factually incorrect.",
+          "metadata": {
+            "raw_score": 3
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "case_005",
+      "question": "I bought an unused physical product 20 days ago. How long will my refund take?",
+      "answer": "Refunds are processed within 5 business days. Please note that refunds are available within 60 days.",
+      "results": [
+        {
+          "evaluator": "deterministic",
+          "criterion": "max_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer is within the maximum length.",
+          "metadata": {
+            "actual_length": 100,
+            "maximum": 500
+          }
+        },
+        {
+          "evaluator": "deterministic",
+          "criterion": "min_length",
+          "score": 1.0,
+          "passed": true,
+          "reason": "Answer meets the minimum length.",
+          "metadata": {
+            "actual_length": 100,
+            "minimum": 10
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "correctness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI provides a factually incorrect statement claiming refunds are available within 60 days, whereas the source of truth states 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "relevance",
+          "score": 0.5,
+          "passed": false,
+          "reason": "The AI answers the specific question about the refund duration, but includes irrelevant and incorrect information about the refund window.",
+          "metadata": {
+            "raw_score": 3
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "completeness",
+          "score": 1.0,
+          "passed": true,
+          "reason": "The AI includes the core piece of information requested by the user (the 5 business days processing time).",
+          "metadata": {
+            "raw_score": 5
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "groundedness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The claim that refunds are available within 60 days is not supported by the source of truth; the source explicitly says 30 days.",
+          "metadata": {
+            "raw_score": 2
+          }
+        },
+        {
+          "evaluator": "llm",
+          "criterion": "conciseness",
+          "score": 0.25,
+          "passed": false,
+          "reason": "The AI includes unnecessary and incorrect additional information that was not requested by the user.",
+          "metadata": {
+            "raw_score": 2
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "quality_score": 0.51,
+    "deterministic_score": 1.0,
+    "overall_score": 0.51,
+    "total_evaluations": 35,
+    "criteria": {
+      "correctness": {
+        "average_score": 0.25,
+        "total_evaluations": 5,
+        "passed": 0,
+        "failed": 5
+      },
+      "relevance": {
+        "average_score": 0.65,
+        "total_evaluations": 5,
+        "passed": 2,
+        "failed": 3
+      },
+      "completeness": {
+        "average_score": 1.0,
+        "total_evaluations": 5,
+        "passed": 5,
+        "failed": 0
+      },
+      "groundedness": {
+        "average_score": 0.25,
+        "total_evaluations": 5,
+        "passed": 0,
+        "failed": 5
+      },
+      "conciseness": {
+        "average_score": 0.4,
+        "total_evaluations": 5,
+        "passed": 1,
+        "failed": 4
+      }
+    },
+    "deterministic": {
+      "max_length": {
+        "pass_rate": 1.0,
+        "total_evaluations": 5,
+        "passed": 5,
+        "failed": 0
+      },
+      "min_length": {
+        "pass_rate": 1.0,
+        "total_evaluations": 5,
+        "passed": 5,
+        "failed": 0
+      }
+    }
+  },
+  "quality_gate": {
+    "passed": false,
+    "failures": [
+      "correctness score 0.25 is below required 0.8",
+      "groundedness score 0.25 is below required 0.8",
+      "relevance score 0.65 is below required 0.75"
+    ]
+  }
+}

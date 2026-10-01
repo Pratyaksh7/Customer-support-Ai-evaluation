@@ -1,4 +1,9 @@
 import json
+from datetime import datetime
+from dataclasses import asdict
+
+from app.run import EvaluationRun
+from app.run_store import RunStore
 
 from app.customer_support import CustomerSupportAgent
 from app.evaluator import AnswerEvaluator
@@ -10,6 +15,11 @@ from app.scoring.aggregator import EvaluationAggregator
 from app.scoring.gate import EvaluationGate
 from app.llm import LLMClient
 
+def create_run_id() -> str:
+
+    return datetime.now().strftime(
+        "run_%Y%m%d_%H%M%S"
+    )
 
 def load_evaluation_cases():
     with open(
@@ -105,7 +115,9 @@ def main():
             answer=answer,
         )
 
-        all_results.extend(case_evaluation.results)
+        all_results.append(case_evaluation)
+
+        # all_results.extend(case_evaluation.results)
 
         # -----------------------------
         # Print case results
@@ -214,6 +226,36 @@ def main():
                 f"- {failure}"
             )
 
+    serialized_results = [
+                asdict(result)
+                for result in all_results
+            ]
+    
+    run = EvaluationRun(
+        run_id=create_run_id(),
+        timestamp=datetime.now().isoformat(),
+
+        cases_evaluated=len(cases),
+
+        results=serialized_results,
+
+        summary=summary,
+
+        quality_gate={
+            "passed": gate_result.passed,
+            "failures": gate_result.failures,
+        },
+    )
+
+    store = RunStore()
+
+    file_path = store.save(run)
+
+    print()
+    print(
+        f"Evaluation run saved to: "
+        f"{file_path}"
+    )
 
 if __name__ == "__main__":
     main()
