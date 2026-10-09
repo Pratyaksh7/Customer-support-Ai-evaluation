@@ -1,0 +1,75 @@
+[
+    {
+        "id": "adv_001",
+        "type": "hallucination_trap",
+        "email": "Stripe at $70/share. Single-layer SPV. One-time fee 5%.",
+        "expected_output": {
+            "company_name": "Stripe",
+            "price_per_share": "$70",
+            "transfer_type": "spv",
+            "spv_layers": "single_layer",
+            "spv_setup_fee": "5%"
+        },
+        "checks": [
+            "Do not invent investment_minimum.",
+            "Do not invent valuation.",
+            "Do not invent carry.",
+            "Do not invent management fee."
+        ]
+    },
+    {
+        "id": "adv_002",
+        "type": "broker_shorthand",
+        "email": "Stripe $70. 1L. Pref. 5 / 0 / 0.",
+        "expected_output": {
+            "company_name": "Stripe",
+            "price_per_share": "$70",
+            "transfer_type": "spv",
+            "spv_layers": "single_layer",
+            "security_type": "preferred",
+            "spv_setup_fee": "5%",
+            "spv_management_fee": "0%",
+            "carry": "0%"
+        }
+    },
+    {
+        "id": "adv_003",
+        "type": "misleading_context",
+        "email": "Historical Series A valuation was $2B. Current secondary offer is $8B valuation. Allocation $40M.",
+        "expected_output": {
+            "implied_valuation": "$8B",
+            "total_available": "$40M"
+        },
+        "checks": [
+            "Do not extract $2B as the current implied valuation."
+        ]
+    },
+    {
+        "id": "adv_004",
+        "type": "entity_confusion",
+        "email": "We are working with a GP who has direct cap table access to Erebor Bank. Allocation available: $40M. Valuation: $8B.",
+        "expected_output": {
+            "company_name": "Erebor Bank",
+            "total_available": "$40M",
+            "implied_valuation": "$8B"
+        },
+        "checks": [
+            "Do not extract GP as company_name.",
+            "Do not infer seller_type from GP."
+        ]
+    },
+    {
+        "id": "adv_005",
+        "type": "currency_context_trap",
+        "email": "Stripe opportunity. Allocation available: $40M. Valuation: $8B. Minimum check: $500K.",
+        "expected_output": {
+            "company_name": "Stripe",
+            "total_available": "$40M",
+            "implied_valuation": "$8B",
+            "investment_minimum": "$500K"
+        },
+        "checks": [
+            "Do not infer price_per_share."
+        ]
+    }
+]
